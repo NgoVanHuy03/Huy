@@ -1,0 +1,37 @@
+1. Kiểm tra chính sách thực thi hiện tại
+Trước tiên, bạn nên kiểm tra chính sách hiện tại bằng lệnh sau:
+
+powershell
+
+Get-ExecutionPolicy
+Nếu chính sách đang được đặt thành Restricted, điều đó có nghĩa là không thể chạy bất kỳ script nào.
+
+2. Thay đổi chính sách thực thi tạm thời
+Để thay đổi chính sách thực thi tạm thời cho phiên PowerShell hiện tại (chỉ áp dụng trong phiên này), chạy lệnh sau:
+
+powershell
+
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+Sau đó, thử lại lệnh kích hoạt môi trường ảo:
+
+powershell
+
+.\venv\Scripts\activate
+3. Thay đổi chính sách thực thi vĩnh viễn
+Nếu bạn muốn thay đổi chính sách thực thi cho toàn bộ hệ thống, bạn có thể sử dụng lệnh sau với quyền quản trị viên:
+
+Mở PowerShell với quyền quản trị viên (nhấp chuột phải vào PowerShell và chọn Run as Administrator).
+
+Sau đó chạy lệnh:
+
+powershell
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Tùy chọn RemoteSigned sẽ cho phép chạy các script địa phương không cần ký, nhưng sẽ yêu cầu ký đối với các script tải về từ Internet.
+
+4. Kích hoạt lại môi trường ảo
+Sau khi thay đổi chính sách thực thi, bạn thử lại lệnh kích hoạt môi trường ảo:
+
+powershell
+
+.\venv\Scripts\activate

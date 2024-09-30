@@ -1,0 +1,192 @@
+.App {
+  text-align: center;
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-size: 12px; /* Cỡ chữ 12px */
+}
+
+.chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 30px; /* Cỡ chữ 12px */
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.chat-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  height: 500px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-content {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.my-message {
+  background-color: #e1ffc7;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+  max-width: 70%;
+  align-self: flex-end;
+}
+
+.ai-message {
+  background-color: #d1d1d1;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+  max-width: 70%;
+  align-self: flex-start; /* Căn trái cho tin nhắn của AI */
+  text-align: left; /* Đảm bảo căn trái nội dung tin nhắn AI */
+}
+
+.chat-content p {
+  font-size: 12px; /* Cỡ chữ 12px */
+  word-wrap: break-word;
+  text-align: justify;
+}
+
+.chat-input-container {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 12px; /* Cỡ chữ 12px */
+}
+
+.send-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007BFF;
+  color: white;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: #45a049;
+}
+
+.final-prompt {
+  padding: 10px;
+  background-color: #f0f0f0;
+  margin: 5px 0;
+  font-size: 12px; /* Cỡ chữ 12px */
+}
+
+.question-prompt {
+  cursor: pointer;
+  color: blue;
+  font-size: 12px; /* Cỡ chữ 12px */
+  font-weight: normal;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  max-width: 80%;
+}
+
+.question-box {
+  position: absolute;
+  bottom: 60px;
+  left: 10px;
+  background-color: white;
+  border: 3px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  overflow-y: auto;
+  max-height: 150px;
+}
+
+.question-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.question-item {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 12px; /* Cỡ chữ 12px */
+}
+
+.question-prompt:hover {
+  text-decoration: underline;
+  background-color: #e0e0e0;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px; /* Cỡ chữ 12px */
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+/* Chấm đỏ để thông báo tin nhắn mới */
+.notification-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+}
